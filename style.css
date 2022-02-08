@@ -1,0 +1,428 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* Small */
+@media (min-width: 768px) {
+    .container{
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width:992px){
+    .container{
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width:1200px){
+    .container{
+        width: 1170px;
+    }
+}
+@font-face {
+    font-family: Vibes;
+    src: url(../Project/fonts/GreatVibes-Regular.ttf);
+}
+@font-face {
+    font-family: Frank-ME;
+    src: url(../Project/fonts/FrankRuhlLibre-Medium.ttf);
+}
+@font-face {
+    font-family: frank-re;
+    src: url(../Project/fonts/FrankRuhlLibre-Regular.ttf);
+}
+/* start header */
+
+.main-head{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    box-shadow:0px 0px 5px #ddd ;
+}
+nav {
+display: flex;
+}
+.main-head h1{
+    position: relative;
+   font-family: Vibes;
+   width: fit-content;
+}
+nav ul{
+    list-style: none;
+    margin-top: 19.92px;
+    right: 0;
+    position: absolute;
+}
+nav ul li {
+    display: inline-block;
+}
+nav ul li a{
+text-decoration: none;
+color: black;
+padding: 10px;
+font-weight: bold;
+transition: transform 0.3s;
+
+}
+nav ul li a:hover{
+    padding: 10px 20px;
+    box-shadow: 0 0 5px  rgb(202, 196, 196);
+
+}
+/* End header*/
+/*start section hero*/
+.hero{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display:grid;
+    min-height: calc(100vh - 70.22px);
+    grid-template-columns: repeat(5,1fr);
+    grid-template-areas: "texte texte texte  image image" ;
+    overflow: hidden;
+}
+.hero .hero-introduction{
+   grid-area: texte;
+   display: flex;
+   font-size: 20px;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-left: 20px;
+   margin-right: 20px;
+   max-width: 350px;
+   line-height: 1.3;
+}
+.hero .hero-introduction h2{
+   text-align: center;
+   font-family: Frank-ME;  
+
+}
+.hero .hero-introduction p span{
+    display: inline-block; 
+    font-family: frank-re; 
+    color: #5f5f5f; 
+ }
+.hero .hero-introduction p span:nth-child(2){
+    padding-left: 10px;
+}
+.hero .hero-introduction p span:nth-child(3){
+    padding-left: 20px;
+}
+.hero .hero-introduction p span:nth-child(4){
+    padding-left: 18px;
+}
+.hero .hero-introduction a{
+    text-decoration: none;
+    color: black;
+    font-family: frank-re;
+    padding:10px 10px;  
+    border: 2px solid black ;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    transition: ease-out 0.3s;
+    position: relative;
+    z-index: 1;
+}
+.hero .hero-introduction a:hover{
+  color: #fff;
+  cursor: pointer;
+}
+.hero .hero-introduction a::before{
+   content: "";  
+   background-color: black;
+   width:300px;
+   height:50px; 
+   transition: 0.5s all ease;
+   position: absolute;
+   top: 0;
+   left: 50%;
+   right: 50%;
+   bottom: 0;
+   opacity: 0;
+}
+.hero .hero-introduction a:hover:before{
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    z-index: -1;
+
+}
+
+
+
+.hero .hero-images{
+    position: relative;
+    background-color: #dad7dc;
+    grid-area: image;
+    display:flex;
+}
+.hero .hero-images .hero-elena{
+     width: 100%;
+    height: calc(100vh - 71px);
+    z-index: 3;
+}
+.hero .hero-images .plant{
+    animation: coloring 3s linear 2s infinite ;
+}
+.hero .hero-images .plant:hover{
+ animation-play-state: paused;
+}
+@keyframes coloring
+{
+  0% {
+    filter: invert(0);
+
+  }
+  60% {
+    filter: invert(50%);
+  }
+  100% {
+    filter: invert(80%);
+}
+}
+.hero .hero-images .plant1{
+        position: absolute;
+        max-width: 50%;
+        z-index: 2;
+        right: 65%;
+        bottom: 0;
+    }
+.hero .hero-images .plant2  {
+        position: absolute;
+        width: 50%;
+        z-index: 2;
+        right: -5%;
+        bottom: 0;
+        
+    }   
+@media (max-width: 767px) {      
+   .hero{
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: 50% 50%;
+    grid-template-areas: "texte ""image" ;
+    overflow: hidden;
+   }
+    .hero .hero-introduction a{
+        transform: translateY(40px); 
+    }
+}
+/* section about  */
+#about{
+   
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display:inline-flex;
+    flex-wrap:wrap;  
+    height:100vh;
+}
+section .about-image h5{
+   font-family: Frank-ME;
+   font-weight: bold;
+   font-size:20px;
+   letter-spacing: 20px;
+   position: absolute;
+   right: 50%;
+   top: 10%;
+   transform:translateX(50%) ;
+}
+
+section .about-image img{
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+}
+section .about-image{
+    flex-grow: 1;
+    flex-basis: 250px;
+    height:calc(100vh - 4px);
+    position: relative;
+}
+section .about-text{
+    background-color: #414141;
+    padding: 40px ;
+    flex-grow: 1;
+    flex-basis:250px ;
+    color: white;
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+}
+section .about-text h2{
+    font-family: Vibes;
+    text-align: center;
+}
+section .about-text h3{
+    font-family: Frank-ME;
+    font-weight: bold;
+    font-size: 22px;
+}
+section .about-text p{
+    font-family: frank-re;
+   font-size: 17px;
+   line-height: 1.8;
+   margin-right: 50px;
+   min-width:250px ;
+}
+.gallery{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display:grid;
+    grid-template-columns: 30% 30% 40% ;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:"frimg frimg scimg" "thimg foimg scimg";
+    height:100vh;
+    width: 100%;
+    background-color: ;
+}
+.gallery1{
+    grid-area: frimg;    
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+}
+.gallery2{
+    grid-area: scimg;
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+}
+.gallery3{
+    grid-area: thimg;
+    height:100%;
+    width: 100%;
+    object-fit: cover;}
+.gallery4{
+    grid-area: foimg;
+    height:100%;
+    width: 100%;
+   }
+/* End section about  */
+/* Start section contact */
+.contact{
+    margin-left: auto;
+    margin-right: auto;
+     display:flex;
+    flex-wrap:wrap;  
+    min-height: calc(100vh - 70px);
+}
+.contact .form-wrapper {
+    flex-grow: 1;
+    flex-basis:300px;
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact .form-wrapper h2{
+   font-family: Frank-re;
+   font-weight: bold;
+   font-size:20px;
+   line-height: 1.8;
+}
+.contact .form-wrapper h2 span{
+   color: #906272;
+   font-size:30px;
+}
+.contact .form-wrapper form {
+   /* position: absolute; */
+   /* right: 50%; */
+   /* top: 30%; */
+   /* transform: translateX(50%); */
+   margin: 20px;
+   
+}
+.contact .form-wrapper .form label{
+    margin: 30px 0;
+    font-family: frank-e;
+    font-weight: bold;
+}
+.contact .form-wrapper .form input{
+    margin: 30px 0;
+    background-color:#414141 ;
+    caret-color: white;
+    color: white;
+
+}
+.contact .form-wrapper .form button{
+    margin: 30px 0;
+    border: none;
+    background-color: #906272;
+    width: 170.4px;
+    height: 22px;
+    font-family: Freank-re;
+    color: white;
+    box-shadow: inset 0 0 0 0 rgb(22, 22, 10);
+    transition: ease-out 0.3s;
+}
+.contact .form-wrapper .form button:hover{
+    box-shadow: inset 170.4px 0 0 0 rgb(22, 22, 10);
+}
+
+.contact .img {
+    flex-grow: 1;
+    flex-basis:300px;
+    /* height: calc(100vh - 70px);    */
+    
+}
+.contact .img img {
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+} 
+/* End section contact */
+
+/* Start Footer */
+footer{
+    background-color:#414141 ;
+    display:flex;
+    flex-wrap: wrap;
+   }
+footer h4{
+    padding: 0 20px;
+    flex-grow:1;
+    flex-basis:100px;
+    color: white;
+    font-family: frank-re;
+}
+footer ul{
+    flex-grow:1;
+    flex-basis: 200px;
+    list-style: none;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/*footer ul li{
+    margin: 0 20px;
+    display: inline-block; 
+}
+footer ul li:nth-child(1){
+    position: absolute;
+    left: 0;
+}
+
+footer ul li:nth-child(2){
+    position: absolute;
+    left: 45%;
+
+}
+footer ul li:nth-child(3){
+    position: absolute;
+    right: 0;
+}*/
+
+
+/* End Footer*/
+
+
